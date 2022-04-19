@@ -2,7 +2,7 @@ const { NotFound } = require("http-errors");
 
 const { Contact } = require("../../models/contact");
 
-const updateContactById = async (req, res) => {
+const updateFavorite = async (req, res) => {
   const { contactId } = req.params;
   const result = await Contact.findByIdAndUpdate(contactId, req.body, {
     new: true,
@@ -19,4 +19,4 @@ const updateContactById = async (req, res) => {
   });
 };
 
-module.exports = updateContactById;
+module.exports = updateFavorite;
