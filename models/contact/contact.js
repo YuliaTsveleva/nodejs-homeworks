@@ -9,7 +9,6 @@ const contactSchema = Schema(
     },
     email: {
       type: String,
-      // match:/.../...54 min//
     },
     phone: {
       type: String,
