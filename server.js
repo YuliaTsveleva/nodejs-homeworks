@@ -2,6 +2,8 @@ const app = require("./app");
 const mongoose = require("mongoose");
 // require("dotenv").config();
 
+// удалить папку Schemas, файд contacts в папке models
+
 const { DB_HOST, PORT = 3000 } = process.env;
 
 // app.listen(3000, () => {
