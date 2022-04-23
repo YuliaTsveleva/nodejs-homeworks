@@ -5,7 +5,16 @@ const listContacts = async (req, res) => {
   const { page = 1, limit = 20 } = req.query;
   const skip = (page - 1) * limit;
 
-  const result = await Contact.find({ owner: _id }, "", {
+  const filterFavorite = req.query.favorite;
+
+  let target;
+  if (filterFavorite) {
+    target = { owner: _id, favorite: filterFavorite };
+  } else {
+    target = { owner: _id };
+  }
+
+  const result = await Contact.find(target, "", {
     skip,
     limit: Number(limit),
   }).populate("owner", "_id email subscription");
