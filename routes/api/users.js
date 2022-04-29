@@ -31,4 +31,6 @@ router.patch(
   ctrlWrapper(ctrl.updateSubscription)
 );
 
+router.get("/verify/:verificationToken", auth, ctrlWrapper(ctrl.verifyEmail));
+
 module.exports = router;
